@@ -2,7 +2,7 @@
 
 The research question of interest is the predict the hand written digit correctly. This has applications in automatic mail sorting or identifying forms based upon the form number such as tax forms and U.S. government standard form series. 
 
-The code can be run interactively through a [Google Colab Notebook]().
+The code can be run interactively through a [Google Colab Notebook](https://colab.research.google.com/github/jhancuch/pca-random-forest-digit-recognizer/blob/main/script.ipynb).
 
 ## Research design and modeling methods
 I utilize an 80/20 train/validate split to ensure the models I build are not overfitting prior to generating predictions using the test set. I first generate a random forest classifier model, then a random forest classifier model using principal component analysis in the preprocessing stage, and then finally a K-Means classifier. I then fit the model using cross validation (k=5) before testing the final model on a validation set to ensure the model did not overfit to the training set.
