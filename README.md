@@ -16,10 +16,9 @@ It will be interesting to see how the PCA processed classifier performs versus t
 |---     | ---           | ---               | ---     |
 | CV Accuracy Mean | 0.96 | 0.93 | NA |
 | Validation Accuracy | 0.97 | 0.93 | 0.85 |
-| Test Accuracy | 0.?? | 0.?? | 0.85 |
+| Test Accuracy | 0.97 | 0.93 | 0.85 |
 
-
+Random Forest without and principal component analysis is by far the best model with a test accuracy of 97 percent compared to 93 percent for the PCA random forest and 85 percent for the K-means. The 5% reduction in information through PCA resulted in a 4% drop in test accuracy. While this should have sped up the model, instead it took 54 seconds compared to just the 16 seconds for the stand alone random forest model. This could be due to another program on my machine running at the same time and should be investigated. But at face value, just the random forest model has a better accuracy and lower computation time. We find through the K-means validation that k=390 is the optimal k. This shows there are a lot of different ways for individuals to write a single digit. However, k-means appeared to struggle to successfully cluster edge cases such as 4 and 9 and 3 and 8.
 
 ## Discusion
-
-54 seconds for pca, 16 seconds for non-pca
+If i were to deploy one of these three models, it would be the random forest due to its high accuracy. However, prior to deployment, I would need to test the actual computation time again for both the random forest model and the pca random forest model. I originally used %%time which just computes the time for a single run. However, by using timeit%% instead, it conducts 1000 iterations and computes the mean and standard deviation which would give us a much better sense of what the actual population stastitic is.
